@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
+
+*{box-sizing: border-box; padding: 0; margin: 0;}
+
+html{
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family:'Open Sans', sans-serif;
+    background-color: #fff;
+    color: var(--dark);
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--yellow);
+}
+
+/*navbar*/
+
+
+.main-header .navigation-bar .nav-bar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1.3rem;
+    background-color: transparent;
+}
+
+
+.main-header .navigation-bar .nav-bar .logo{
+
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+
+.main-header .navigation-bar .nav-bar .logo i{
+    padding-right: 9px;
+    color: var(--red);
+}
+
+.main-header .navigation-bar .nav-bar .logo a{
+    color: var(--red);
+}
+
+
+.main-header .navigation-bar .nav-bar-links a{
+    font-size: 1.8;
+    margin: 1.2rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.main-header .navigation-bar .nav-bar-links a:hover{
+    cursor: pointer;
+    border-bottom: 4px solid var(--red);
+    padding: 9px;
+}
+
+/*main-images*/
+
+.main-header{
+    /*bg resim işlemleri*/
+    background-image: url('../img/bg-hamburger.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%; /*resmin sayfayı komple kaplaması için*/
+    position: relative;
+}
+
+.main-header::before{
+    /*bg resimine gölgelendirme atmak için*/
+    background-color: rgb(0, 0, 0, .2); /*üstüne siyah film attık*/
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.main-header *{
+    z-index: 5;
+}
+
+
+.main-header .main-header-content{ 
+    /*resim üstündeki yazıyı solda ortaya hizalamak için*/
+    color: var(--white);
+    height: 100%; /*height veriyoruz çünkü dikeyde ortalamak için*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 2rem;
+    letter-spacing: 3px;
+    width: fit-content;
+}
+
+
+.main-header .main-header-content .header-btn{
+    /*resim üstündeki butonu özelleştirmek için*/
+    margin-top: 2rem;
+    margin-left: 40rem; 
+    padding: 9px;
+    border-radius: 12px;
+    width:fit-content; /*bg rengini içerik kadar yer kapla olarak tanımlıyoruz*/
+}
+
+.main-header .main-header-content .header-btn a{
+    /*resim üstündeki buton içindeki linki şekillendirmek*/
+    color: var(--dark);
+    letter-spacing: 0;
+}
+
+.main-header .main-header-content span{
+    /*resim içindeki texti şekillendirmek*/
+    margin-top: 2rem; 
+}
+
+/*mutfaklar*/
+
+.kitchens-header{
+    /*başlık içindeki kısımları şekillendirmek için*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem;
+}
+
+
+.kitchens-header h1{
+    font-weight: 600;
+    font-size: 3rem;
+    padding-bottom: 2rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.kitchens-header span{
+    font-size: 2rem;
+}
+
+
+
+.main-kitchens .card{
+    /*kartlar arası boşluk ve renklendirme için açılan panel*/
+    background-color: var(--red);
+    color: var(--white);
+    margin: 3rem 2rem;
+    padding: 2rem;
+    width: 30rem; /*kartların arka planı için boyutlandırma*/
+    border-radius: 10px;
+}
+
+.main-kitchens .card:hover{
+    /*kartların üstüne mause ile gelince olacaklar*/
+    cursor: pointer;
+    background-color: var(--yellow);
+    color: var(--dark);
+    transition: 0.4s;
+    box-shadow: 10px 5px 10px 5px gray; /*gölgelendirme yaptık*/
+}
+
+.main-kitchens img{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%; /*resmi boyutlandırdık*/
+}
+
+.kitchens-img{
+    /*resmi konumlandırmak için*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-kitchens-border{
+    display: flex; /*kartları yan yana aldık*/
+    justify-content: center;
+    align-items: center;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    background-color: var(--light);
+}
+.main-kitchens-border .kitchens-content{
+    display: flex; /*kartlardaki içeriği konumlandırak için kullandım*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-kitchens-border .kitchens-content h2{
+    padding: 2rem 0 ;
+    font-weight: 600;
+}
+
+.main-kitchens-border .kitchens-content span{
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+/*gallery*/
+
+
+.section-padding{
+    /*tüm resimleer ve başlıkların nereden başlayacağını ayarladık*/
+    margin: 4rem;
+    background-color: var(--light);
+}
+
+.gallery .gallery-header{
+    /*başlık kısmının olduğu alanı düzenledik*/
+    display: flex;
+    flex-direction: column;/*başlık ve yazıyı alt alta aldık*/
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.gallery .gallery-header h2{
+    font-weight: 600;
+    font-size: 3.2rem;
+    letter-spacing: 3px;
+    padding-bottom: 2rem;
+}
+
+.gallery .gallery-header span{
+    padding-bottom: 4rem;
+    font-size: 2.4rem;
+    font-weight: 400;
+}
+.gallery .row{
+    /*GALERİDEKİ RESİMLERİ KONUMLANDIRMAK*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery .column img{
+    /*resimleri boyutlandırdık*/
+    width: 30rem;
+    margin: 0.7rem;
+    opacity: 0.8;
+}
+
+.gallery .column img:hover{
+
+    cursor: pointer;
+    opacity: 1;
+    transform: scale(1.1); /*resmi 1.1 kadar büyüt*/
+
+}
+
+/*footer*/
+
+.main-footer{
+    display: flex;
+    position: relative; /*content kısmını img üstüne almak için kullanıyoruz*/
+    justify-content: space-around; /*içerikleri ortaladık*/
+    align-items: center;
+}
+
+.footer-img img{
+    width: 100%;
+    height: 40rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.footer-img{
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+.footer-img::before{
+    width: 100%;
+    height: 40rem;
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgb(0, 0, 0, .8);
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 4rem;
+    position: absolute; /*içeriği imgin üstüne almak için kullanıyoruz*/
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+
+.footer-content .menu{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    text-align: center;
+}
+
+.footer-content .menu a{
+    font-size: 2.2rem;
+}
+
+.footer-content .iletisim{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    text-align: right;
+}
+
+
+  
